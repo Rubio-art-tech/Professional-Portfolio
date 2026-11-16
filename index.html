@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barry Rubio — Full Stack Developer</title>
+  <meta name="description" content="Barry Rubio — full stack developer and Computer Systems Servicing NC II passer from Guihulngan City, Negros Oriental, Philippines. First-year student at Colegio de Santa Rita de San Carlos, Inc." />
+  <meta name="theme-color" content="#05070f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=4" />
+</head>
+<body class="is-loading">
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="hud">
+      <span>Barry Rubio</span>
+      <span>Portfolio · 2026</span>
+    </div>
+
+    <div class="loader-core">
+      <span class="corner tl"></span>
+      <span class="corner tr"></span>
+      <span class="corner bl"></span>
+      <span class="corner br"></span>
+
+      <svg class="loader-ring" viewBox="0 0 200 200" aria-hidden="true">
+        <defs>
+          <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#4d7cff" />
+            <stop offset="55%" stop-color="#58d5ff" />
+            <stop offset="100%" stop-color="#7c5cff" />
+          </linearGradient>
+        </defs>
+        <circle class="ring-ticks" cx="100" cy="100" r="96" />
+        <circle class="ring-track" cx="100" cy="100" r="88" />
+        <circle class="ring-fill" id="ring-fill" cx="100" cy="100" r="88" />
+      </svg>
+
+      <div class="loader-readout">
+        <p class="preloader-count"><span id="load-count">0</span><span class="preloader-pct">%</span></p>
+        <p class="preloader-label">Initializing<span class="dots"><i></i><i></i><i></i></span></p>
+      </div>
+    </div>
+
+    <p class="preloader-foot">Guihulngan City · Negros Oriental</p>
+  </div>
+  <noscript><style>.preloader { display: none; } body.is-loading { overflow: auto; }</style></noscript>
+
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+
+  <canvas class="starfield" id="starfield" aria-hidden="true"></canvas>
+  <div class="glow glow-a" aria-hidden="true"></div>
+  <div class="glow glow-b" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <a href="#home" class="topbar-brand">Barry<span>.</span></a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="sidebar" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <aside class="sidebar" id="sidebar" aria-label="Sidebar">
+    <a href="#home" class="brand">
+      <img class="brand-photo" src="assets/barry-rubio.jpg" alt="Barry Rubio" width="52" height="52" />
+      <span class="brand-name">Barry Rubio</span>
+      <span class="brand-role">Full Stack Developer</span>
+    </a>
+
+    <p class="status"><span class="pulse"></span> Available for projects</p>
+
+    <nav class="side-nav" aria-label="Sections">
+      <a class="navlink active" href="#home">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5.5v-6h-5v6H4a1 1 0 0 1-1-1z"/></svg>
+        Home
+      </a>
+      <a class="navlink" href="#about">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.2 3.6-6.5 8-6.5S20 16.8 20 21"/></svg>
+        About
+      </a>
+      <a class="navlink" href="#portfolio">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        Portfolio
+      </a>
+      <a class="navlink" href="#contact">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>
+        Contact
+      </a>
+    </nav>
+
+    <div class="side-contact">
+      <p class="side-label">Contact</p>
+      <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=revillabarry@gmail.com&amp;su=Hello%20Barry" target="_blank" rel="noreferrer noopener">revillabarry@gmail.com</a>
+      <a href="tel:+639634216867">0963 421 6867</a>
+      <p class="side-place">Guihulngan City<br />Negros Oriental, Philippines</p>
+    </div>
+
+    <p class="side-copy">© <span id="year">2026</span> Barry Rubio</p>
+  </aside>
+
+  <main class="page" id="main">
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse"></span> Hello, I'm Barry Rubio</p>
+        <h1>Welcome to<br /><span class="grad">My Portfolio</span></h1>
+        <p class="typed"><span id="typed">Full Stack Developer</span><span class="caret" aria-hidden="true"></span></p>
+        <p class="lede">
+          An 18-year-old developer from Guihulngan City, Negros Oriental. I build clean,
+          responsive websites with HTML, CSS and JavaScript — and I'm a Computer Systems
+          Servicing NC II passer,
+          studying at Colegio de Santa Rita de San Carlos, Inc.
+        </p>
+
+        <div class="cta">
+          <a href="#portfolio" class="btn btn-primary">
+            View my work
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-ghost">Contact me</a>
+        </div>
+
+        <div class="find-me">
+          <span class="find-label">Find me</span>
+          <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=revillabarry@gmail.com&amp;su=Hello%20Barry" class="icon-btn" aria-label="Email Barry Rubio on Gmail" target="_blank" rel="noreferrer noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>
+          </a>
+          <a href="tel:+639634216867" class="icon-btn" aria-label="Call Barry Rubio">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 5 5L15 12l5 2v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4 5.2 2 2 0 0 1 6 3z"/></svg>
+          </a>
+          <a href="https://maps.google.com/?q=Guihulngan+City,+Negros+Oriental" class="icon-btn" aria-label="Guihulngan City on the map" target="_blank" rel="noreferrer noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="badge-wrap" aria-hidden="true">
+        <div class="lanyard">
+          <span class="strap"></span>
+          <span class="clip"></span>
+          <div class="badge">
+            <div class="badge-head">
+              <span class="badge-mark">BR</span>
+              <span class="badge-cert">CSS NC II</span>
+            </div>
+            <p class="badge-name">Barry Rubio</p>
+            <p class="badge-role">Full Stack Developer</p>
+            <span class="photo-frame">
+              <img class="badge-photo" src="assets/barry-rubio.jpg" alt="Barry Rubio" />
+            </span>
+            <p class="badge-school">Colegio de Santa Rita de San Carlos, Inc.</p>
+            <p class="badge-foot">Guihulngan City · Negros Oriental</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Computer Systems Servicing NC II</span><span>Responsive Layout</span><span>Guihulngan City</span>
+        </div>
+        <div class="marquee-group">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Computer Systems Servicing NC II</span><span>Responsive Layout</span><span>Guihulngan City</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <header class="sec-head">
+        <p class="sec-label">About</p>
+        <h2>Hi, I'm <span class="grad">Barry Rubio</span></h2>
+      </header>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm eighteen, from Guihulngan City in Negros Oriental. I started with web
+            development out of plain curiosity — changing one line and watching the page
+            respond — and it has held my attention since.
+          </p>
+          <p>
+            I'm a Computer Systems Servicing NC II passer, which gave me a working standard
+            for the technical side of the trade rather than just the theory. These days I'm a first-year student at
+            Colegio de Santa Rita de San Carlos, Inc., building small pages between classes
+            and learning the parts of the craft that don't show up in a tutorial.
+          </p>
+          <p>
+            What I care about is unglamorous: pages that load quickly, read clearly, and hold
+            together on a phone in the province as well as on a desktop anywhere.
+          </p>
+        </div>
+
+        <dl class="facts">
+          <div><dt>Name</dt><dd>Barry Rubio</dd></div>
+          <div><dt>Age</dt><dd>18</dd></div>
+          <div><dt>Home</dt><dd>Guihulngan City, Negros Oriental</dd></div>
+          <div><dt>Certification</dt><dd>NC II — Computer Systems Servicing</dd></div>
+          <div><dt>School</dt><dd>Colegio de Santa Rita de San Carlos, Inc.</dd></div>
+          <div><dt>Year level</dt><dd>First year</dd></div>
+          <div><dt>Stack</dt><dd>HTML, CSS, JavaScript</dd></div>
+        </dl>
+      </div>
+
+      <div class="tabs" data-tabs="about">
+        <div class="tab-bar" role="tablist" aria-label="About">
+          <button class="tab active" role="tab" aria-selected="true" aria-controls="panel-education" id="tab-education" data-panel="panel-education">Education</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="panel-experience" id="tab-experience" data-panel="panel-experience" tabindex="-1">Practice</button>
+        </div>
+
+        <div class="tab-panel active" id="panel-education" role="tabpanel" aria-labelledby="tab-education">
+          <ul class="record-list">
+            <li>
+              <span class="record-when">Present</span>
+              <div>
+                <h3>Colegio de Santa Rita de San Carlos, Inc.</h3>
+                <p>First-year student, continuing coursework in information technology and web development.</p>
+              </div>
+            </li>
+            <li>
+              <span class="record-when">Certified</span>
+              <div>
+                <h3>Computer Systems Servicing NC II</h3>
+                <p>Passed the National Certificate II assessment in Computer Systems Servicing (CSS), covering the technical skills and workplace standards of the qualification.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="tab-panel" id="panel-experience" role="tabpanel" aria-labelledby="tab-experience">
+          <ul class="record-list">
+            <li>
+              <span class="record-when">Ongoing</span>
+              <div>
+                <h3>Self-taught web development</h3>
+                <p>Practising layout, responsiveness and interaction through personal pages built with HTML, CSS and JavaScript.</p>
+              </div>
+            </li>
+            <li>
+              <span class="record-when">Current</span>
+              <div>
+                <h3>This portfolio</h3>
+                <p>Hand-written markup and styles — no frameworks, no page builder — built as a place to keep learning in public.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="section portfolio" id="portfolio">
+      <header class="sec-head center">
+        <p class="sec-label">Work</p>
+        <h2>What I have <span class="grad">to show</span></h2>
+      </header>
+
+      <p class="giant" aria-hidden="true">Portfolio</p>
+
+      <div class="tabs center" data-tabs="work">
+        <div class="tab-bar glass" role="tablist" aria-label="Portfolio">
+          <button class="tab active" role="tab" aria-selected="true" aria-controls="panel-certificates" id="tab-certificates" data-panel="panel-certificates">Certificates</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="panel-stack" id="tab-stack" data-panel="panel-stack" tabindex="-1">Tech stack</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="panel-projects" id="tab-projects" data-panel="panel-projects" tabindex="-1">Projects</button>
+        </div>
+
+        <div class="tab-panel active" id="panel-certificates" role="tabpanel" aria-labelledby="tab-certificates">
+          <div class="card-grid">
+            <article class="cert-card">
+              <div class="cert-top">
+                <span class="cert-seal">NC II</span>
+                <span class="cert-issued">TESDA standard</span>
+              </div>
+              <h3>Computer Systems Servicing NC II</h3>
+              <p class="cert-line">This certifies that</p>
+              <p class="cert-name">Barry Rubio</p>
+              <p class="cert-line">has passed the competency assessment for Computer Systems Servicing (CSS).</p>
+              <div class="cert-foot">
+                <span>Status — Passed</span>
+                <span>Philippines</span>
+              </div>
+            </article>
+
+            <article class="cert-card">
+              <div class="cert-top">
+                <span class="cert-seal alt">1st</span>
+                <span class="cert-issued">Enrolled</span>
+              </div>
+              <h3>Colegio de Santa Rita de San Carlos, Inc.</h3>
+              <p class="cert-line">Currently studying</p>
+              <p class="cert-name">First Year</p>
+              <p class="cert-line">Information technology and web development coursework.</p>
+              <div class="cert-foot">
+                <span>Status — Present</span>
+                <span>Negros Oriental</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="panel-stack" role="tabpanel" aria-labelledby="tab-stack">
+          <div class="card-grid three">
+            <article class="stack-card">
+              <span class="stack-glyph">&lt;/&gt;</span>
+              <h3>HTML</h3>
+              <p>Semantic structure, accessible landmarks, forms and media that behave correctly.</p>
+            </article>
+            <article class="stack-card">
+              <span class="stack-glyph">#</span>
+              <h3>CSS</h3>
+              <p>Responsive layout with Flexbox and Grid, mobile-first breakpoints, type and spacing.</p>
+            </article>
+            <article class="stack-card">
+              <span class="stack-glyph">JS</span>
+              <h3>JavaScript</h3>
+              <p>DOM manipulation, events and ES6 syntax for interface behaviour.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects">
+          <div class="card-grid">
+            <article class="project-card">
+              <div class="project-top">
+                <span class="project-year">2026</span>
+                <span class="project-tag">Live</span>
+              </div>
+              <h3>This portfolio</h3>
+              <p>A single page built from scratch with hand-written HTML, CSS and JavaScript — responsive, lightweight, and the first project I've put online.</p>
+              <ul class="chip-row">
+                <li>HTML</li><li>CSS</li><li>JavaScript</li>
+              </ul>
+            </article>
+            <article class="project-card muted">
+              <div class="project-top">
+                <span class="project-year">Next</span>
+                <span class="project-tag">In progress</span>
+              </div>
+              <h3>Space for the next build</h3>
+              <p>Nothing here yet. New pages go up as I finish them — if you'd like to see one built, that's usually how it starts.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <header class="sec-head">
+        <p class="sec-label">Contact</p>
+        <h2>Let's work <span class="grad">together</span></h2>
+        <p class="sec-intro">Open to small web projects, collaborations and learning opportunities. Write to me directly, or leave a message.</p>
+      </header>
+
+      <div class="contact-grid">
+        <form class="glass form" id="contact-form" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your name" />
+            <p class="error"></p>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com" />
+            <p class="error"></p>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required placeholder="What would you like to build?"></textarea>
+            <p class="error"></p>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Send message</button>
+          <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="glass info-panel">
+          <h3>Direct lines</h3>
+          <a class="info-row" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=revillabarry@gmail.com&amp;su=Hello%20Barry" target="_blank" rel="noreferrer noopener">
+            <span class="info-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>
+            </span>
+            <span>
+              <span class="info-label">Email</span>
+              <span class="info-value">revillabarry@gmail.com</span>
+            </span>
+          </a>
+          <a class="info-row" href="tel:+639634216867">
+            <span class="info-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 5 5L15 12l5 2v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4 5.2 2 2 0 0 1 6 3z"/></svg>
+            </span>
+            <span>
+              <span class="info-label">Phone</span>
+              <span class="info-value">0963 421 6867</span>
+            </span>
+          </a>
+          <div class="info-row static">
+            <span class="info-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            </span>
+            <span>
+              <span class="info-label">Location</span>
+              <span class="info-value">Guihulngan City, Negros Oriental, Philippines</span>
+            </span>
+          </div>
+
+          <p class="info-note">Usually replies within a day. Messages in English or Cebuano are both fine.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>© <span class="footer-year">2026</span> Barry Rubio — Guihulngan City, Negros Oriental</p>
+      <p class="footer-note">Built with HTML, CSS and JavaScript</p>
+    </footer>
+  </main>
+
+  <script src="script.js?v=4"></script>
+</body>
+</html>
